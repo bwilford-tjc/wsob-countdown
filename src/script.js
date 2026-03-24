@@ -1,4 +1,4 @@
-const birdingStart = new Date(2025, 4, 9, 0);
+const birdingStart = new Date(2026, 4, 9, 0);
 
 const expiredGray = "rgb(152, 152, 152)";
 
