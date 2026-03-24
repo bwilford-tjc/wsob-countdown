@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown to WS of Birding</title>
+  <meta name="description" content="Live countdown to the World Series of Birding on May 9, 2026, with 370 bird fun facts and text-to-speech.">
+  <meta name="author" content="bwilford">
+
+  <!-- Corporate firewall / content categorization metadata -->
+  <meta name="rating" content="general">
+  <meta name="classification" content="education">
+  <meta name="category" content="entertainment">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Countdown to WS of Birding">
+  <meta property="og:description" content="Live countdown to the World Series of Birding with 370 bird fun facts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wsob-countdown.bwilf.app">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1 id="title">The World Series of Birding</h1>
+  <h3>Saturday, <br>May 9, 2026<br>at 12:00a ET</h3>
+  <h2>Countdown:</h2>
+
+  <div class="clockface">
+    <div class="boxTime" id="d"></div>
+    <div class="boxTime" id="h"></div>
+    <div class="boxTime" id="m"></div>
+    <div class="boxTime" id="s"></div>
+    <div class="boxLabel" id="dLabel">Days</div>
+    <div class="boxLabel" id="hLabel">Hours</div>
+    <div class="boxLabel" id="mLabel">Minutes</div>
+    <div class="boxLabel" id="sLabel">Seconds</div>
+  </div>
+
+  <h1 class="goBird" id="goBird1"></h1>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
