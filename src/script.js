@@ -382,7 +382,6 @@ function countdown() {
   let days = document.getElementById("d");
   days.innerHTML = Math.floor(d);
   if (remainingTime < 1000 * 60 * 60 * 24) {
-    days.style.backgroundColor = expiredGray;
     let dLabel = document.getElementById("dLabel");
     dLabel.style.color = expiredGray;
   }
@@ -390,7 +389,6 @@ function countdown() {
   let hours = document.getElementById("h");
   hours.innerHTML = Math.floor(h);
   if (remainingTime < 1000 * 60 * 60) {
-    hours.style.backgroundColor = expiredGray;
     let hLabel = document.getElementById("hLabel");
     hLabel.style.color = expiredGray;
   }
@@ -398,7 +396,6 @@ function countdown() {
   let minutes = document.getElementById("m");
   minutes.innerHTML = Math.floor(m);
   if (remainingTime < 1000 * 60) {
-    minutes.style.backgroundColor = expiredGray;
     let mLabel = document.getElementById("mLabel");
     mLabel.style.color = expiredGray;
   }
@@ -420,7 +417,6 @@ function timerGoesOff() {
   minutes.innerHTML = "0";
   let seconds = document.getElementById("s");
   seconds.innerHTML = "0";
-  seconds.style.backgroundColor = expiredGray;
   let sLabel = document.getElementById("sLabel");
   sLabel.style.color = expiredGray;
   let announce = document.getElementById("goBird1");
