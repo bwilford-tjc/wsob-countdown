@@ -425,6 +425,8 @@ function timerGoesOff() {
   sLabel.style.color = expiredGray;
   let announce = document.getElementById("goBird1");
   announce.innerHTML = "LET'S GO BIRDING!";
+  let breakfast = document.getElementById("wendys");
+  breakfast.src = "./wendys_breakfast.jpg";
 }
 
 function speak() {
