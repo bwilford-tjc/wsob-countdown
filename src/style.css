@@ -1,17 +1,33 @@
 body {
   font-family: Helvetica;
   text-align: center;
-/*   background-color: #2e8b57; */
   background-color: hsl(120, 80%, 40%);
 }
 
+#title {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#title:hover {
+  color: white;
+}
+
+#title.speaking {
+  color: white;
+}
+
+#title.speaking::after {
+  content: " \1F50A";
+}
+
 .clockface {
-	width: 300px; 
-	margin: 0 auto; 
+  width: 300px;
+  margin: 0 auto;
   text-align: center;
   display: grid;
   grid-template-columns: 75px 75px 75px 75px;
-  padding: 0;  
+  padding: 0;
 }
 
 .boxTime {
@@ -32,7 +48,7 @@ body {
 }
 
 .goBird {
-	margin: 0 auto; 
+  margin: 0 auto;
   font-weight: bold;
   font-size: 250%;
   color: red;

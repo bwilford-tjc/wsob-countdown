@@ -372,7 +372,8 @@ const funFacts = [
 
 document.getElementById("title").addEventListener("click", speak);
 
-var countdownInterval = setInterval(countdown, 100);
+var countdownInterval = setInterval(countdown, 1000);
+countdown();
 
 function countdown() {
   let timeZero = new Date();
@@ -427,50 +428,47 @@ function timerGoesOff() {
 }
 
 function speak() {
+  if (!("speechSynthesis" in window)) {
+    alert("Sorry, your browser does not support the Web Speech API");
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  let title = document.getElementById("title");
+  title.classList.add("speaking");
+
   let timeZero = new Date();
   let remainingTime = birdingStart - timeZero;
   let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+
   if (days < 0) {
-    if ("speechSynthesis" in window) {
-      let testSpeech = "Lets GOOOOOOOOOOO";
-      const utterance = new SpeechSynthesisUtterance(testSpeech);
-      speechSynthesis.speak(utterance);
-    } else {
-      alert("Sorry, your browser does not support the Web Speech API");
-    }
+    const utterance = new SpeechSynthesisUtterance("Lets GOOOOOOOOOOO");
+    utterance.onend = function () { title.classList.remove("speaking"); };
+    speechSynthesis.speak(utterance);
   } else if (days < 100) {
-    if ("speechSynthesis" in window) {
-      let testSpeech =
-        "Bro... Seriously, Bro... Can you believe it?" +
-        document.getElementById("title").innerText +
-        " " +
-        `will be here in less than ${days+1} days...`;
-      const utterance = new SpeechSynthesisUtterance(testSpeech);
-      speechSynthesis.speak(utterance);
-      const utterance2 = new SpeechSynthesisUtterance("And in the meantime...");
-      speechSynthesis.speak(utterance2);
-      const todaysFact = funFacts[days % funFacts.length];
-      const utterance3 = new SpeechSynthesisUtterance(todaysFact);
-      speechSynthesis.speak(utterance3);
-    } else {
-      alert("Sorry, your browser does not support the Web Speech API");
-    }
+    const utterance = new SpeechSynthesisUtterance(
+      "Bro... Seriously, Bro... Can you believe it?" +
+      title.innerText + " " +
+      `will be here in less than ${days + 1} days...`
+    );
+    speechSynthesis.speak(utterance);
+    const utterance2 = new SpeechSynthesisUtterance("And in the meantime...");
+    speechSynthesis.speak(utterance2);
+    const utterance3 = new SpeechSynthesisUtterance(funFacts[days % funFacts.length]);
+    utterance3.onend = function () { title.classList.remove("speaking"); };
+    speechSynthesis.speak(utterance3);
   } else {
-    if ("speechSynthesis" in window) {
-      let testSpeech =
-        "Bro... I am sorry to say... " +
-        document.getElementById("title").innerText +
-        " " +
-        `is still more than ${days} days away...`;
-      const utterance = new SpeechSynthesisUtterance(testSpeech);
-      speechSynthesis.speak(utterance);
-      const utterance2 = new SpeechSynthesisUtterance("But in the meantime...");
-      speechSynthesis.speak(utterance2);
-      const todaysFact = funFacts[days % funFacts.length];
-      const utterance3 = new SpeechSynthesisUtterance(todaysFact);
-      speechSynthesis.speak(utterance3);
-    } else {
-      alert("Sorry, your browser does not support the Web Speech API");
-    }
+    const utterance = new SpeechSynthesisUtterance(
+      "Bro... I am sorry to say... " +
+      title.innerText + " " +
+      `is still more than ${days} days away...`
+    );
+    speechSynthesis.speak(utterance);
+    const utterance2 = new SpeechSynthesisUtterance("But in the meantime...");
+    speechSynthesis.speak(utterance2);
+    const utterance3 = new SpeechSynthesisUtterance(funFacts[days % funFacts.length]);
+    utterance3.onend = function () { title.classList.remove("speaking"); };
+    speechSynthesis.speak(utterance3);
   }
 }
