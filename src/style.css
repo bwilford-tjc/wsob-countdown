@@ -2,6 +2,33 @@ body {
   font-family: Helvetica;
   text-align: center;
   background-color: hsl(120, 80%, 40%);
+  transition: background-color 1s ease, color 1s ease;
+}
+
+body.expired {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.expired .boxTime {
+  background-color: #16213e;
+  color: #888;
+}
+
+body.expired .boxLabel {
+  color: #888;
+}
+
+body.expired #title {
+  color: #e0e0e0;
+}
+
+body.expired #title:hover {
+  color: #fff;
+}
+
+body.expired .goBird {
+  color: #49fb35;
 }
 
 #title {

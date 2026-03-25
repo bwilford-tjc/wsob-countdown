@@ -1,4 +1,4 @@
-const birdingStart = new Date(2026, 4, 9, 0);
+const birdingStart = new Date(2025, 4, 9, 0);
 
 const expiredGray = "rgb(152, 152, 152)";
 
@@ -417,12 +417,11 @@ function timerGoesOff() {
   minutes.innerHTML = "0";
   let seconds = document.getElementById("s");
   seconds.innerHTML = "0";
-  let sLabel = document.getElementById("sLabel");
-  sLabel.style.color = "black";
   let announce = document.getElementById("goBird1");
   announce.innerHTML = "LET'S GO BIRDING!";
   let breakfast = document.getElementById("wendys");
   breakfast.src = "./wendys_breakfast.jpg";
+  document.body.classList.add("expired");
 }
 
 function speak() {
