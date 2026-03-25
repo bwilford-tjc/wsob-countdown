@@ -381,24 +381,12 @@ function countdown() {
   let d = remainingTime / (1000 * 60 * 60 * 24);
   let days = document.getElementById("d");
   days.innerHTML = Math.floor(d);
-  if (remainingTime < 1000 * 60 * 60 * 24) {
-    let dLabel = document.getElementById("dLabel");
-    dLabel.style.color = "black";
-  }
   let h = (d - Math.floor(d)) * 24;
   let hours = document.getElementById("h");
   hours.innerHTML = Math.floor(h);
-  if (remainingTime < 1000 * 60 * 60) {
-    let hLabel = document.getElementById("hLabel");
-    hLabel.style.color = "black";
-  }
   let m = (h - Math.floor(h)) * 60;
   let minutes = document.getElementById("m");
   minutes.innerHTML = Math.floor(m);
-  if (remainingTime < 1000 * 60) {
-    let mLabel = document.getElementById("mLabel");
-    mLabel.style.color = "black";
-  }
   let s = (m - Math.floor(m)) * 60;
   let seconds = document.getElementById("s");
   seconds.innerHTML = Math.floor(s);
